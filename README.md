@@ -1,4 +1,4 @@
-# Ordered UUID V1
+# UUID V1 Orderer
 
 ![Github CI](https://github.com/MufidJamaluddin/uuidv1_ordered/workflows/Go/badge.svg)
 
