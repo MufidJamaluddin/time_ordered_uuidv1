@@ -18,8 +18,11 @@ Go 1.14 ~ 1.15, other versions are not tested
 
 `
 unorderedUuid := UUIDStringToBytes("c5db1800-ce4c-11de-a5e2-1b45123c6e98")
+
 orderedUuid := ToOrderedUuid(unorderedUuid)
+
 orderedUuidStr := UUIDBytesToString(orderedUuid)
+
 // next, your logic
 `
 
@@ -27,8 +30,11 @@ orderedUuidStr := UUIDBytesToString(orderedUuid)
 
 `
 orderedUuid := UUIDStringToBytes("c5db1800-ce4c-11de-a5e2-1b45123c6e98")
+
 standardUuidV1 := FromOrderedUuid(orderedUuid)
+
 standardUuidV1Str := UUIDBytesToString(standardUuidV1)
+
 // next, your logic
 `
 
