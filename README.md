@@ -1,5 +1,7 @@
 # Ordered UUID V1
 
+![Github CI](https://github.com/MufidJamaluddin/uuidv1_ordered/workflows/Go/badge.svg)
+
 Transform UUID V1 bytes to ordered UUID V1 bytes by inserted time for practical purposes. If you want to store UUID's sequentially in databases, you can use this library.
 
 ### Notes
