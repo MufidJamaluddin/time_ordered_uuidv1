@@ -1,12 +1,50 @@
-# Ordered UUID V1
+# UUID V1 Orderer
 
-Transform UUID V1 bytes to ordered UUID V1 bytes by inserted time for practical purposes. If you want to store UUID's sequentially in databases, you can use this library.
+![Github CI](https://github.com/MufidJamaluddin/uuidv1_ordered/workflows/Go/badge.svg)
 
-### Notes
+Ordering UUID V1 bytes by inserted timestamp for practical purposes. If you want to store UUID's sequentially in databases, you can use this library.
 
-1. UUID V1 In String
+## Requirement
 
-`c5db1800-ce4c-11de-a5e2-1b45123c6e98`
+Go 1.14 ~ 1.15, other versions not tested
+
+## Instalation
+
+Add it in your project: `go get github.com/MufidJamaluddin/uuidv1_orderer`
+
+## How to Use
+
+1. Ordering Existing UUID's
+
+```
+unorderedUuid := UUIDStringToBytes("c5db1800-ce4c-11de-a5e2-1b45123c6e98")
+
+orderedUuid := ToOrderedUuid(unorderedUuid)
+
+orderedUuidStr := UUIDBytesToString(orderedUuid)
+
+// next, your logic
+```
+
+2. Transform Back to Standard UUID V1
+
+```
+orderedUuid := UUIDStringToBytes("11dece4c-c5db-1800-a5e2-1b45123c6e98")
+
+standardUuidV1 := FromOrderedUuid(orderedUuid)
+
+standardUuidV1Str := UUIDBytesToString(standardUuidV1)
+
+// next, your logic
+```
+
+## Notes
+
+The differences explanation between ordered and standard UUID V1 is bellow
+
+### UUID V1 In String
+
+Example: `c5db1800-ce4c-11de-a5e2-1b45123c6e98`
 
 Meaning: 
 1. Timestamp `1de-ce4c-c5db1800` in `c5db1800-ce4c-11de`
@@ -14,6 +52,12 @@ Meaning:
 3. Clock sequence `a5e2`
 4. Standard MAC Address or Nonstandard Random IDs `1b45123c6e98`
 
-2. Ordered UUID V2
+### Ordered UUID V1
 
-Reorder timestamp to its origin form with UUID version on top.
+Reorder timestamp to it's origin form with UUID version on top.
+
+Example: `11dece4c-c5db-1800-a5e2-1b45123c6e98`
+
+## Licenses
+
+(c) Mufid Jamaluddin. MIT Licenses
